@@ -1,0 +1,1234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Copia Collective — The Trusted Marketplace for Eco-Ethical Commerce</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --clay:    #C4A882;
+      --sage:    #6B7C5C;
+      --stone:   #2E2B27;
+      --cream:   #F5F0E8;
+      --linen:   #EDE7DA;
+      --sand:    #D9CDBF;
+      --rust:    #9C6B45;
+      --white:   #FDFAF5;
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-body:    'DM Sans', sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--white);
+      color: var(--stone);
+      font-family: var(--font-body);
+      font-weight: 300;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.4rem 3rem;
+      background: rgba(253,250,245,0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(196,168,130,0.2);
+      transition: background 0.3s;
+    }
+
+    .nav-logo {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--stone);
+      text-decoration: none;
+    }
+
+    .nav-cta {
+      font-family: var(--font-body);
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--white);
+      background: var(--stone);
+      border: none;
+      padding: 0.65rem 1.5rem;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.25s, transform 0.2s;
+    }
+
+    .nav-cta:hover { background: var(--sage); transform: translateY(-1px); }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 8rem 4rem 6rem 3rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-eyebrow {
+      font-family: var(--font-body);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--sage);
+      margin-bottom: 1.8rem;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.2s forwards;
+    }
+
+    .hero-headline {
+      font-family: var(--font-display);
+      font-size: clamp(3rem, 5vw, 5.5rem);
+      font-weight: 300;
+      line-height: 1.05;
+      color: var(--stone);
+      margin-bottom: 2rem;
+      opacity: 0;
+      animation: fadeUp 0.9s 0.4s forwards;
+    }
+
+    .hero-headline em {
+      font-style: italic;
+      color: var(--rust);
+    }
+
+    .hero-sub {
+      font-size: 1rem;
+      font-weight: 300;
+      color: #6B6560;
+      max-width: 420px;
+      margin-bottom: 3rem;
+      opacity: 0;
+      animation: fadeUp 0.9s 0.6s forwards;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: fadeUp 0.9s 0.8s forwards;
+    }
+
+    .btn-primary {
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      background: var(--stone);
+      color: var(--white);
+      padding: 1rem 2.2rem;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.25s, transform 0.2s;
+    }
+
+    .btn-primary:hover { background: var(--sage); transform: translateY(-2px); }
+
+    .btn-ghost {
+      font-family: var(--font-body);
+      font-size: 0.78rem;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--stone);
+      text-decoration: underline;
+      text-underline-offset: 4px;
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+
+    .btn-ghost:hover { color: var(--sage); }
+
+    .hero-right {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-mosaic {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+      gap: 3px;
+      opacity: 0;
+      animation: fadeIn 1.2s 0.5s forwards;
+    }
+
+    .mosaic-cell {
+      background: var(--linen);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .mosaic-cell:nth-child(1) { background: var(--sage); grid-row: span 2; }
+    .mosaic-cell:nth-child(2) { background: var(--clay); }
+    .mosaic-cell:nth-child(3) { background: var(--sand); }
+    .mosaic-cell:nth-child(4) { background: var(--stone); grid-column: span 2; }
+
+    .mosaic-label {
+      position: absolute;
+      bottom: 1rem; left: 1rem;
+      font-family: var(--font-body);
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(253,250,245,0.7);
+    }
+
+    .mosaic-cell:nth-child(1) .mosaic-inner {
+      position: absolute; inset: 0;
+      display: flex; flex-direction: column;
+      justify-content: center; align-items: center;
+      padding: 2rem;
+    }
+
+    .mosaic-stat {
+      font-family: var(--font-display);
+      font-size: 4rem;
+      font-weight: 300;
+      color: var(--white);
+      line-height: 1;
+    }
+
+    .mosaic-stat-label {
+      font-family: var(--font-body);
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(253,250,245,0.75);
+      margin-top: 0.5rem;
+      text-align: center;
+    }
+
+    .mosaic-cell:nth-child(4) .mosaic-inner {
+      position: absolute; inset: 0;
+      display: flex; align-items: center;
+      padding: 2rem 3rem;
+      gap: 3rem;
+    }
+
+    .mosaic-quote {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      font-style: italic;
+      font-weight: 300;
+      color: var(--white);
+      line-height: 1.3;
+      max-width: 480px;
+    }
+
+    /* ── DIVIDER ── */
+    .marquee-strip {
+      background: var(--stone);
+      padding: 1rem 0;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .marquee-inner {
+      display: inline-flex;
+      gap: 3rem;
+      animation: marquee 28s linear infinite;
+    }
+
+    .marquee-item {
+      font-family: var(--font-body);
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--clay);
+      flex-shrink: 0;
+    }
+
+    .marquee-dot {
+      color: var(--sage);
+      margin: 0 0.5rem;
+    }
+
+    /* ── PROBLEM ── */
+    .section-problem {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 80vh;
+    }
+
+    .problem-left {
+      background: var(--linen);
+      padding: 6rem 4rem 6rem 3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .section-label {
+      font-family: var(--font-body);
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--sage);
+      margin-bottom: 2rem;
+    }
+
+    .section-headline {
+      font-family: var(--font-display);
+      font-size: clamp(2.2rem, 3.5vw, 3.8rem);
+      font-weight: 300;
+      line-height: 1.1;
+      color: var(--stone);
+      margin-bottom: 2rem;
+    }
+
+    .section-headline em { font-style: italic; color: var(--rust); }
+
+    .section-body {
+      font-size: 0.95rem;
+      font-weight: 300;
+      color: #6B6560;
+      line-height: 1.8;
+      max-width: 480px;
+    }
+
+    .problem-right {
+      background: var(--stone);
+      padding: 6rem 3rem 6rem 4rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 2.5rem;
+    }
+
+    .stat-block {
+      border-left: 2px solid var(--clay);
+      padding-left: 1.5rem;
+    }
+
+    .stat-number {
+      font-family: var(--font-display);
+      font-size: 3.5rem;
+      font-weight: 300;
+      color: var(--clay);
+      line-height: 1;
+    }
+
+    .stat-desc {
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      font-weight: 300;
+      color: var(--sand);
+      margin-top: 0.4rem;
+      line-height: 1.6;
+    }
+
+    /* ── SOLUTION ── */
+    .section-solution {
+      padding: 7rem 3rem;
+      background: var(--white);
+    }
+
+    .solution-header {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 5rem;
+    }
+
+    .trust-engine {
+      display: flex;
+      gap: 0;
+      max-width: 1100px;
+      margin: 0 auto;
+      border: 1px solid var(--sand);
+    }
+
+    .engine-step {
+      flex: 1;
+      padding: 2.5rem 1.5rem;
+      border-right: 1px solid var(--sand);
+      position: relative;
+      transition: background 0.25s;
+    }
+
+    .engine-step:last-child { border-right: none; }
+    .engine-step:hover { background: var(--linen); }
+
+    .engine-number {
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      font-weight: 300;
+      color: var(--clay);
+      opacity: 0.5;
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+
+    .engine-title {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 400;
+      color: var(--stone);
+      margin-bottom: 0.8rem;
+    }
+
+    .engine-desc {
+      font-size: 0.82rem;
+      font-weight: 300;
+      color: #7A756F;
+      line-height: 1.7;
+    }
+
+    .engine-arrow {
+      position: absolute;
+      top: 50%; right: -12px;
+      transform: translateY(-50%);
+      width: 22px; height: 22px;
+      background: var(--white);
+      border: 1px solid var(--sand);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.6rem;
+      color: var(--clay);
+      z-index: 2;
+    }
+
+    .engine-step:last-child .engine-arrow { display: none; }
+
+    /* ── VALUES ── */
+    .section-values {
+      background: var(--linen);
+      padding: 7rem 3rem;
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      max-width: 1100px;
+      margin: 4rem auto 0;
+      border: 1px solid var(--sand);
+    }
+
+    .value-card {
+      padding: 3rem 2rem;
+      border-right: 1px solid var(--sand);
+      transition: background 0.25s;
+    }
+
+    .value-card:last-child { border-right: none; }
+    .value-card:hover { background: var(--white); }
+
+    .value-icon {
+      font-size: 1.5rem;
+      margin-bottom: 1.2rem;
+      display: block;
+    }
+
+    .value-title {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 400;
+      color: var(--stone);
+      margin-bottom: 0.8rem;
+    }
+
+    .value-desc {
+      font-size: 0.83rem;
+      font-weight: 300;
+      color: #7A756F;
+      line-height: 1.7;
+    }
+
+    /* ── ETHOS LOOP ── */
+    .section-ethos {
+      background: var(--stone);
+      padding: 7rem 3rem;
+    }
+
+    .ethos-header {
+      text-align: center;
+      max-width: 580px;
+      margin: 0 auto 5rem;
+    }
+
+    .ethos-header .section-label { color: var(--clay); }
+
+    .ethos-header .section-headline { color: var(--white); }
+
+    .ethos-loop {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      max-width: 1100px;
+      margin: 0 auto;
+      background: rgba(196,168,130,0.2);
+    }
+
+    .ethos-item {
+      background: var(--stone);
+      padding: 3rem 2rem;
+      text-align: center;
+      transition: background 0.25s;
+    }
+
+    .ethos-item:hover { background: #3A3730; }
+
+    .ethos-c {
+      font-family: var(--font-display);
+      font-size: 3.5rem;
+      font-weight: 300;
+      color: var(--clay);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .ethos-word {
+      font-family: var(--font-body);
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--sand);
+      margin-bottom: 1.2rem;
+    }
+
+    .ethos-desc {
+      font-size: 0.83rem;
+      font-weight: 300;
+      color: rgba(217,205,191,0.7);
+      line-height: 1.7;
+    }
+
+    /* ── BRANDS ── */
+    .section-brands {
+      padding: 7rem 3rem;
+      background: var(--white);
+    }
+
+    .brands-header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      max-width: 1100px;
+      margin: 0 auto 4rem;
+      align-items: end;
+    }
+
+    .brands-list {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      max-width: 1100px;
+      margin: 0 auto;
+      background: var(--sand);
+    }
+
+    .brand-tile {
+      background: var(--white);
+      padding: 2rem 1.5rem;
+      text-align: center;
+      transition: background 0.2s;
+    }
+
+    .brand-tile:hover { background: var(--linen); }
+
+    .brand-name {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 400;
+      letter-spacing: 0.05em;
+      color: var(--stone);
+    }
+
+    .brand-origin {
+      font-family: var(--font-body);
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--sage);
+      margin-top: 0.3rem;
+    }
+
+    /* ── GROWTH SYSTEM ── */
+    .section-growth {
+      background: var(--linen);
+      padding: 7rem 3rem;
+    }
+
+    .growth-tiers {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      max-width: 1100px;
+      margin: 4rem auto 0;
+    }
+
+    .tier-card {
+      background: var(--white);
+      padding: 2.5rem 2rem;
+      border-top: 3px solid var(--clay);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .tier-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(46,43,39,0.08); }
+
+    .tier-card:nth-child(1) { border-color: var(--sand); }
+    .tier-card:nth-child(2) { border-color: var(--clay); }
+    .tier-card:nth-child(3) { border-color: var(--sage); }
+    .tier-card:nth-child(4) { border-color: var(--stone); }
+
+    .tier-icon { font-size: 1.4rem; margin-bottom: 1rem; }
+
+    .tier-name {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 400;
+      color: var(--stone);
+      margin-bottom: 0.3rem;
+    }
+
+    .tier-range {
+      font-family: var(--font-body);
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--sage);
+      margin-bottom: 1rem;
+    }
+
+    .tier-desc {
+      font-size: 0.83rem;
+      font-weight: 300;
+      color: #7A756F;
+      line-height: 1.7;
+    }
+
+    /* ── VISION / MISSION ── */
+    .section-vision {
+      background: var(--sage);
+      padding: 8rem 3rem;
+      text-align: center;
+    }
+
+    .vision-eyebrow {
+      font-family: var(--font-body);
+      font-size: 0.7rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(253,250,245,0.6);
+      margin-bottom: 2rem;
+    }
+
+    .vision-text {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 4.5rem);
+      font-weight: 300;
+      font-style: italic;
+      color: var(--white);
+      line-height: 1.15;
+      max-width: 900px;
+      margin: 0 auto 4rem;
+    }
+
+    .mission-text {
+      font-family: var(--font-body);
+      font-size: 1rem;
+      font-weight: 300;
+      color: rgba(253,250,245,0.8);
+      max-width: 580px;
+      margin: 0 auto;
+      line-height: 1.8;
+    }
+
+    /* ── FINAL CTA ── */
+    .section-cta {
+      background: var(--stone);
+      padding: 8rem 3rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-bg-text {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: var(--font-display);
+      font-size: 18rem;
+      font-weight: 300;
+      color: rgba(196,168,130,0.05);
+      white-space: nowrap;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .cta-label {
+      font-family: var(--font-body);
+      font-size: 0.7rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--clay);
+      margin-bottom: 2rem;
+    }
+
+    .cta-headline {
+      font-family: var(--font-display);
+      font-size: clamp(2.2rem, 4vw, 4.5rem);
+      font-weight: 300;
+      color: var(--white);
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+
+    .cta-headline em { font-style: italic; color: var(--clay); }
+
+    .cta-sub {
+      font-size: 0.95rem;
+      font-weight: 300;
+      color: rgba(217,205,191,0.7);
+      max-width: 480px;
+      margin: 0 auto 3rem;
+      line-height: 1.8;
+      position: relative;
+    }
+
+    .cta-form {
+      display: flex;
+      gap: 0;
+      max-width: 420px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .cta-input {
+      flex: 1;
+      padding: 1rem 1.5rem;
+      background: rgba(253,250,245,0.08);
+      border: 1px solid rgba(196,168,130,0.3);
+      border-right: none;
+      color: var(--white);
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      font-weight: 300;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .cta-input::placeholder { color: rgba(253,250,245,0.35); }
+    .cta-input:focus { border-color: var(--clay); }
+
+    .cta-submit {
+      padding: 1rem 1.8rem;
+      background: var(--clay);
+      color: var(--white);
+      font-family: var(--font-body);
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .cta-submit:hover { background: var(--rust); }
+
+    .cta-note {
+      margin-top: 1.2rem;
+      font-size: 0.75rem;
+      font-weight: 300;
+      color: rgba(217,205,191,0.45);
+      letter-spacing: 0.05em;
+      position: relative;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--stone);
+      border-top: 1px solid rgba(196,168,130,0.15);
+      padding: 2.5rem 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-logo {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--sand);
+    }
+
+    .footer-copy {
+      font-size: 0.72rem;
+      font-weight: 300;
+      color: rgba(217,205,191,0.4);
+      letter-spacing: 0.05em;
+    }
+
+    .footer-tagline {
+      font-family: var(--font-display);
+      font-size: 0.9rem;
+      font-style: italic;
+      color: rgba(196,168,130,0.5);
+    }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+
+    /* ── SCROLL REVEAL ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.75s ease, transform 0.75s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      nav { padding: 1.2rem 1.5rem; }
+
+      .hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+
+      .hero-left { padding: 7rem 1.5rem 3rem; }
+      .hero-right { height: 50vw; }
+
+      .section-problem { grid-template-columns: 1fr; }
+      .problem-left, .problem-right { padding: 4rem 1.5rem; }
+
+      .trust-engine { flex-direction: column; }
+      .engine-step { border-right: none; border-bottom: 1px solid var(--sand); }
+      .engine-step:last-child { border-bottom: none; }
+      .engine-arrow { display: none; }
+
+      .values-grid { grid-template-columns: 1fr 1fr; }
+      .value-card:nth-child(2n) { border-right: none; }
+      .value-card { border-bottom: 1px solid var(--sand); }
+
+      .ethos-loop { grid-template-columns: 1fr 1fr; }
+      .growth-tiers { grid-template-columns: 1fr 1fr; }
+      .brands-list { grid-template-columns: repeat(2, 1fr); }
+      .brands-header { grid-template-columns: 1fr; gap: 1.5rem; }
+
+      .section-solution,
+      .section-values,
+      .section-ethos,
+      .section-brands,
+      .section-growth,
+      .section-vision,
+      .section-cta { padding: 5rem 1.5rem; }
+
+      .cta-bg-text { font-size: 8rem; }
+    }
+
+    @media (max-width: 560px) {
+      .values-grid { grid-template-columns: 1fr; }
+      .ethos-loop { grid-template-columns: 1fr; }
+      .growth-tiers { grid-template-columns: 1fr; }
+      .brands-list { grid-template-columns: repeat(2, 1fr); }
+      .cta-form { flex-direction: column; }
+      .cta-input { border-right: 1px solid rgba(196,168,130,0.3); border-bottom: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo">Copia Collective</a>
+    <a href="#join" class="nav-cta">Join the Collective</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-left">
+      <p class="hero-eyebrow">The Trusted Marketplace for Eco-Ethical Commerce</p>
+      <h1 class="hero-headline">
+        A more thoughtful<br>
+        way to <em>discover.</em>
+      </h1>
+      <p class="hero-sub">
+        Every piece chosen with intention. Every maker worth knowing. 
+        Copia Collective is where verified eco-ethical brands meet 
+        the conscious consumers they deserve.
+      </p>
+      <div class="hero-actions">
+        <a href="#join" class="btn-primary">Join the Collective</a>
+        <a href="#solution" class="btn-ghost">How it works</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-mosaic">
+        <div class="mosaic-cell">
+          <div class="mosaic-inner">
+            <span class="mosaic-stat">40+</span>
+            <span class="mosaic-stat-label">Verification criteria<br>per brand</span>
+          </div>
+          <span class="mosaic-label">Trust Framework</span>
+        </div>
+        <div class="mosaic-cell">
+          <div class="mosaic-inner" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:1.5rem;">
+            <span style="font-family:var(--font-display);font-size:1rem;font-weight:300;color:var(--white);text-align:center;line-height:1.4;">Made in USA<br><span style="opacity:0.6;font-style:italic;">Independently built</span></span>
+          </div>
+        </div>
+        <div class="mosaic-cell">
+          <div class="mosaic-inner" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:1.5rem;">
+            <span style="font-family:var(--font-display);font-size:1rem;font-weight:300;color:var(--stone);text-align:center;line-height:1.4;">Real people.<br><span style="font-style:italic;">Real stories.</span></span>
+          </div>
+        </div>
+        <div class="mosaic-cell">
+          <div class="mosaic-inner">
+            <span class="mosaic-quote">"We choose local over mass, story over scale, and connection over convenience."</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee-strip" aria-hidden="true">
+    <div class="marquee-inner">
+      <span class="marquee-item">Commerce</span><span class="marquee-dot">·</span>
+      <span class="marquee-item">Content</span><span class="marquee-dot">·</span>
+      <span class="marquee-item">Community</span><span class="marquee-dot">·</span>
+      <span class="marquee-item">Circularity</span><span class="marquee-dot">·</span>
+      <span class="marquee-item">Made in USA</span><span class="marquee-dot">·</span>
+      <span class="marquee-item">Verified Trust</span><span class="marquee-dot">·</span>
+      <span class="marquee-item">Conscious Commerce</span><span class="marquee-dot">·</span>
+      <span class="marquee-item">Real Makers</span><span class="marquee-dot">·</span>
+      <span class="marquee-item">Authentic Stories</span><span class="marquee-dot">·</span>
+      <!-- duplicate for seamless loop -->
+      <span class="marquee-item">Commerce</span><span class="marquee-dot">·</span>
+      <span class="marquee-item">Content</span><span class="marquee-dot">·</span>
+      <span class="marquee-item">Community</span><span class="marquee-dot">·</span>
+      <span class="marquee-item">Circularity</span><span class="marquee-dot">·</span>
+      <span class="marquee-item">Made in USA</span><span class="marquee-dot">·</span>
+      <span class="marquee-item">Verified Trust</span><span class="marquee-dot">·</span>
+      <span class="marquee-item">Conscious Commerce</span><span class="marquee-dot">·</span>
+      <span class="marquee-item">Real Makers</span><span class="marquee-dot">·</span>
+      <span class="marquee-item">Authentic Stories</span><span class="marquee-dot">·</span>
+    </div>
+  </div>
+
+  <!-- PROBLEM -->
+  <section class="section-problem">
+    <div class="problem-left reveal">
+      <p class="section-label">Why We Exist</p>
+      <h2 class="section-headline">Sustainable shopping<br>is <em>broken.</em></h2>
+      <p class="section-body">
+        Greenwashing dominates. Certifications are fragmented. 
+        The brands that have done the hard work — the ones who 
+        genuinely care about how things are made — have no trusted 
+        channel to prove it at scale.
+        <br><br>
+        And conscious consumers? They're left navigating a sea of 
+        claims with no single verified standard to guide them.
+        <br><br>
+        Copia closes this gap. Permanently. For both sides at once.
+      </p>
+    </div>
+    <div class="problem-right">
+      <div class="stat-block reveal">
+        <div class="stat-number">92M</div>
+        <div class="stat-desc">tons of textile waste generated annually — the result of a system optimized for volume, not values.</div>
+      </div>
+      <div class="stat-block reveal">
+        <div class="stat-number">72%</div>
+        <div class="stat-desc">of conscious consumers actively seek verified eco-ethical products — yet no single trusted standard guides them.</div>
+      </div>
+      <div class="stat-block reveal">
+        <div class="stat-number">0</div>
+        <div class="stat-desc">platforms combine verified trust infrastructure, AI discovery, e-commerce, and built-in circularity — until now.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOLUTION -->
+  <section class="section-solution" id="solution">
+    <div class="solution-header reveal">
+      <p class="section-label">The Copia Trust Engine</p>
+      <h2 class="section-headline" style="font-size:clamp(2rem,3vw,3.2rem);">Every brand <em>earns</em> its place.</h2>
+      <p class="section-body" style="margin: 1rem auto 0; text-align:center;">
+        Before a single product reaches a conscious consumer, it passes through our rigorous 40+ point verification framework.
+      </p>
+    </div>
+    <div class="trust-engine reveal">
+      <div class="engine-step">
+        <div class="engine-number">01</div>
+        <div class="engine-title">Verify</div>
+        <div class="engine-desc">Every brand is evaluated across 40+ criteria: materials, labor practices, circularity, and transparency.</div>
+        <div class="engine-arrow">→</div>
+      </div>
+      <div class="engine-step">
+        <div class="engine-number">02</div>
+        <div class="engine-title">Structure</div>
+        <div class="engine-desc">Verified sustainability data is structured so Copia brands are discovered first — by search engines and AI agents.</div>
+        <div class="engine-arrow">→</div>
+      </div>
+      <div class="engine-step">
+        <div class="engine-number">03</div>
+        <div class="engine-title">Surface</div>
+        <div class="engine-desc">Verified products reach conscious consumers seeking a trusted source — through AI-powered curation.</div>
+        <div class="engine-arrow">→</div>
+      </div>
+      <div class="engine-step">
+        <div class="engine-number">04</div>
+        <div class="engine-title">Convert</div>
+        <div class="engine-desc">Verified trust drives higher purchase intent. Values-matched buyers convert at meaningfully higher rates.</div>
+        <div class="engine-arrow">→</div>
+      </div>
+      <div class="engine-step">
+        <div class="engine-number">05</div>
+        <div class="engine-title">Retain</div>
+        <div class="engine-desc">Circularity, community, and loyalty keep consumers inside the ecosystem. Every resale deepens the relationship.</div>
+        <div class="engine-arrow">→</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUES -->
+  <section class="section-values">
+    <div class="solution-header reveal">
+      <p class="section-label">Our Values</p>
+      <h2 class="section-headline" style="font-size:clamp(2rem,3vw,3.2rem);">In a world of faceless brands,<br>we <em>choose differently.</em></h2>
+    </div>
+    <div class="values-grid reveal">
+      <div class="value-card">
+        <span class="value-icon">🌿</span>
+        <div class="value-title">Local Over Mass</div>
+        <div class="value-desc">Every brand on Copia is independently built, thoughtfully made, and backed by a real story rooted in community.</div>
+      </div>
+      <div class="value-card">
+        <span class="value-icon">✦</span>
+        <div class="value-title">Story Over Scale</div>
+        <div class="value-desc">We connect you to objects made with intention — by people who value craft, community, and a more sustainable way of living.</div>
+      </div>
+      <div class="value-card">
+        <span class="value-icon">◎</span>
+        <div class="value-title">Connection Over Convenience</div>
+        <div class="value-desc">We help people support small brands so the communities they come from can grow. The transaction is just the beginning.</div>
+      </div>
+      <div class="value-card">
+        <span class="value-icon">⬡</span>
+        <div class="value-title">Progress, Not Perfection</div>
+        <div class="value-desc">We don't score brands — we recognize where they are on the journey and celebrate every step forward.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ETHOS LOOP -->
+  <section class="section-ethos">
+    <div class="ethos-header reveal">
+      <p class="section-label">The Ethos Loop</p>
+      <h2 class="section-headline" style="color:var(--white);">Four pillars.<br><em>One ecosystem.</em></h2>
+    </div>
+    <div class="ethos-loop reveal">
+      <div class="ethos-item">
+        <div class="ethos-c">C</div>
+        <div class="ethos-word">Commerce</div>
+        <div class="ethos-desc">A curated marketplace of verified sustainable brands — GMV take rate and brand partnerships monetized from day one.</div>
+      </div>
+      <div class="ethos-item">
+        <div class="ethos-c">C</div>
+        <div class="ethos-word">Content</div>
+        <div class="ethos-desc">The authentic stories of the people behind the products — editorial partnerships that make every maker worth knowing.</div>
+      </div>
+      <div class="ethos-item">
+        <div class="ethos-c">C</div>
+        <div class="ethos-word">Community</div>
+        <div class="ethos-desc">A trusted space connecting mindful consumers with exceptional creators — where belonging and shared values drive loyalty.</div>
+      </div>
+      <div class="ethos-item">
+        <div class="ethos-c">C</div>
+        <div class="ethos-word">Circularity</div>
+        <div class="ethos-desc">Resale, repair, and give-back programs that keep items out of landfills — and keep consumers inside our ecosystem.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRANDS -->
+  <section class="section-brands">
+    <div class="brands-header">
+      <div class="reveal">
+        <p class="section-label">Featured Makers</p>
+        <h2 class="section-headline" style="font-size:clamp(2rem,3vw,3rem);">Not everything<br>belongs here —<br><em>that's the point.</em></h2>
+      </div>
+      <div class="reveal">
+        <p class="section-body">
+          We are thoughtful about what we feature, ensuring quality, authenticity, and purpose. 
+          Every brand must be Made in the USA and meet a minimum of 15 criteria across all 8 pillars 
+          of our verification framework.
+        </p>
+      </div>
+    </div>
+    <div class="brands-list reveal">
+      <div class="brand-tile"><div class="brand-name">Imogene + Willie</div><div class="brand-origin">Nashville, TN</div></div>
+      <div class="brand-tile"><div class="brand-name">East Fork</div><div class="brand-origin">Asheville, NC</div></div>
+      <div class="brand-tile"><div class="brand-name">Glassybaby</div><div class="brand-origin">Seattle, WA</div></div>
+      <div class="brand-tile"><div class="brand-name">Hedley & Bennett</div><div class="brand-origin">Los Angeles, CA</div></div>
+      <div class="brand-tile"><div class="brand-name">Etkie</div><div class="brand-origin">The Southwest</div></div>
+      <div class="brand-tile"><div class="brand-name">Jenni Earle</div><div class="brand-origin">North Carolina</div></div>
+      <div class="brand-tile"><div class="brand-name">Bryr Studio</div><div class="brand-origin">San Francisco, CA</div></div>
+      <div class="brand-tile"><div class="brand-name">Ume Studio</div><div class="brand-origin">California</div></div>
+      <div class="brand-tile"><div class="brand-name">Tatine</div><div class="brand-origin">Chicago, IL</div></div>
+      <div class="brand-tile"><div class="brand-name">DS & Durga</div><div class="brand-origin">Brooklyn, NY</div></div>
+      <div class="brand-tile"><div class="brand-name">Lucchese</div><div class="brand-origin">El Paso, TX</div></div>
+      <div class="brand-tile"><div class="brand-name">Marie Turnor</div><div class="brand-origin">Los Angeles, CA</div></div>
+    </div>
+  </section>
+
+  <!-- GROWTH SYSTEM -->
+  <section class="section-growth">
+    <div class="solution-header reveal">
+      <p class="section-label">The Copia Growth System</p>
+      <h2 class="section-headline" style="font-size:clamp(2rem,3vw,3.2rem);"><em>Progress,</em> not perfection.</h2>
+      <p class="section-body" style="margin:1rem auto 0;text-align:center;">
+        We don't score brands — we recognize where they are on the journey. Built for credibility. Designed for clarity. Focused on progress.
+      </p>
+    </div>
+    <div class="growth-tiers reveal">
+      <div class="tier-card">
+        <div class="tier-icon">🌱</div>
+        <div class="tier-name">Emerging</div>
+        <div class="tier-range">15–24 criteria</div>
+        <div class="tier-desc">Good start. Building the structure and practices that will define this brand's sustainability journey.</div>
+      </div>
+      <div class="tier-card">
+        <div class="tier-icon">🌿</div>
+        <div class="tier-name">Progressing</div>
+        <div class="tier-range">25–34 criteria</div>
+        <div class="tier-desc">Meaningful action underway across multiple pillars. This brand is doing the work and it shows.</div>
+      </div>
+      <div class="tier-card">
+        <div class="tier-icon">🍃</div>
+        <div class="tier-name">Advanced</div>
+        <div class="tier-range">35–44 criteria</div>
+        <div class="tier-desc">Strong, consistent sustainability practices embedded across the business. A true community leader.</div>
+      </div>
+      <div class="tier-card">
+        <div class="tier-icon">🌳</div>
+        <div class="tier-name">Leading</div>
+        <div class="tier-range">45+ criteria</div>
+        <div class="tier-desc">Best-in-class, embedded across every layer of the business. Setting the standard for the industry.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VISION / MISSION -->
+  <section class="section-vision">
+    <div class="vision-eyebrow reveal">Our Vision</div>
+    <p class="vision-text reveal">
+      A world where commerce shapes communities for the better.
+    </p>
+    <p class="mission-text reveal">
+      Our mission is to connect mindful consumers with exceptional creators 
+      who want to share the authentic stories of the people behind their products.
+    </p>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="section-cta" id="join">
+    <div class="cta-bg-text" aria-hidden="true">Copia</div>
+    <p class="cta-label reveal">Join the Movement</p>
+    <h2 class="cta-headline reveal">Become part of our<br><em>conscious community.</em></h2>
+    <p class="cta-sub reveal">
+      Sign up for early access and founder rewards. 
+      Whether you're a mindful consumer or an exceptional creator — 
+      there's a place for you in the Collective.
+    </p>
+    <div class="cta-form reveal">
+      <input type="email" class="cta-input" placeholder="Your email address" aria-label="Email address" />
+      <button class="cta-submit">Join Now</button>
+    </div>
+    <p class="cta-note reveal">No spam. Ever. Just community.</p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="footer-logo">Copia Collective</span>
+    <span class="footer-tagline">A more thoughtful way to discover.</span>
+    <span class="footer-copy">© 2026 Copia Collective. CopiaCollective.co</span>
+  </footer>
+
+  <script>
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    reveals.forEach(el => observer.observe(el));
+
+    // Stagger child reveals within grids
+    document.querySelectorAll('.values-grid, .ethos-loop, .growth-tiers, .trust-engine, .brands-list').forEach(grid => {
+      const children = grid.children;
+      Array.from(children).forEach((child, i) => {
+        child.style.transitionDelay = `${i * 0.08}s`;
+      });
+    });
+  </script>
+</body>
+</html>
