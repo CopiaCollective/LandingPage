@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Copia Collective — The Trusted Marketplace for Eco-Ethical Commerce</title>
+  <title>Copia Collective — The Trusted Marketplace for Conscious Commerce</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
@@ -282,6 +282,23 @@
       margin: 0 0.5rem;
     }
 
+    /* ── ABOUT ── */
+    .section-about {
+      background: var(--white);
+      padding: 8rem 3rem;
+      max-width: 820px;
+      margin: 0 auto;
+    }
+
+    .about-heading {
+      font-family: var(--font-display);
+      font-size: clamp(2.8rem, 6vw, 6rem);
+      font-weight: 300;
+      color: var(--stone);
+      line-height: 1.05;
+      margin-bottom: 2.5rem;
+    }
+
     /* ── PROBLEM ── */
     .section-problem {
       display: grid;
@@ -474,115 +491,6 @@
       line-height: 1.7;
     }
 
-    /* ── ETHOS LOOP ── */
-    .section-ethos {
-      background: var(--stone);
-      padding: 7rem 3rem;
-    }
-
-    .ethos-header {
-      text-align: center;
-      max-width: 580px;
-      margin: 0 auto 5rem;
-    }
-
-    .ethos-header .section-label { color: var(--clay); }
-
-    .ethos-header .section-headline { color: var(--white); }
-
-    .ethos-loop {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1px;
-      max-width: 1100px;
-      margin: 0 auto;
-      background: rgba(196,168,130,0.2);
-    }
-
-    .ethos-item {
-      background: var(--stone);
-      padding: 3rem 2rem;
-      text-align: center;
-      transition: background 0.25s;
-    }
-
-    .ethos-item:hover { background: #3A3730; }
-
-    .ethos-c {
-      font-family: var(--font-display);
-      font-size: 3.5rem;
-      font-weight: 300;
-      color: var(--clay);
-      line-height: 1;
-      margin-bottom: 0.5rem;
-    }
-
-    .ethos-word {
-      font-family: var(--font-body);
-      font-size: 0.72rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--sand);
-      margin-bottom: 1.2rem;
-    }
-
-    .ethos-desc {
-      font-size: 0.83rem;
-      font-weight: 300;
-      color: rgba(217,205,191,0.7);
-      line-height: 1.7;
-    }
-
-    /* ── BRANDS ── */
-    .section-brands {
-      padding: 7rem 3rem;
-      background: var(--white);
-    }
-
-    .brands-header {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      max-width: 1100px;
-      margin: 0 auto 4rem;
-      align-items: end;
-    }
-
-    .brands-list {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1px;
-      max-width: 1100px;
-      margin: 0 auto;
-      background: var(--sand);
-    }
-
-    .brand-tile {
-      background: var(--white);
-      padding: 2rem 1.5rem;
-      text-align: center;
-      transition: background 0.2s;
-    }
-
-    .brand-tile:hover { background: var(--linen); }
-
-    .brand-name {
-      font-family: var(--font-display);
-      font-size: 1rem;
-      font-weight: 400;
-      letter-spacing: 0.05em;
-      color: var(--stone);
-    }
-
-    .brand-origin {
-      font-family: var(--font-body);
-      font-size: 0.68rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--sage);
-      margin-top: 0.3rem;
-    }
-
     /* ── GROWTH SYSTEM ── */
     .section-growth {
       background: var(--linen);
@@ -637,40 +545,21 @@
       line-height: 1.7;
     }
 
-    /* ── VISION / MISSION ── */
-    .section-vision {
-      background: var(--sage);
-      padding: 8rem 3rem;
-      text-align: center;
-    }
-
-    .vision-eyebrow {
-      font-family: var(--font-body);
-      font-size: 0.7rem;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: rgba(253,250,245,0.6);
+    .mission-text {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 3.5vw, 3.8rem);
+      font-weight: 300;
+      color: var(--stone);
+      line-height: 1.2;
       margin-bottom: 2rem;
     }
 
     .vision-text {
-      font-family: var(--font-display);
-      font-size: clamp(2rem, 4vw, 4.5rem);
-      font-weight: 300;
-      font-style: italic;
-      color: var(--white);
-      line-height: 1.15;
-      max-width: 900px;
-      margin: 0 auto 4rem;
-    }
-
-    .mission-text {
       font-family: var(--font-body);
       font-size: 1rem;
       font-weight: 300;
-      color: rgba(253,250,245,0.8);
-      max-width: 580px;
-      margin: 0 auto;
+      font-style: italic;
+      color: #6B6560;
       line-height: 1.8;
     }
 
@@ -863,17 +752,13 @@
       .value-card:nth-child(2n) { border-right: none; }
       .value-card { border-bottom: 1px solid var(--sand); }
 
-      .ethos-loop { grid-template-columns: 1fr 1fr; }
       .growth-tiers { grid-template-columns: 1fr 1fr; }
-      .brands-list { grid-template-columns: repeat(2, 1fr); }
-      .brands-header { grid-template-columns: 1fr; gap: 1.5rem; }
 
+
+      .section-about,
       .section-solution,
       .section-values,
-      .section-ethos,
-      .section-brands,
       .section-growth,
-      .section-vision,
       .section-cta { padding: 5rem 1.5rem; }
 
       .cta-bg-text { font-size: 8rem; }
@@ -881,9 +766,7 @@
 
     @media (max-width: 560px) {
       .values-grid { grid-template-columns: 1fr; }
-      .ethos-loop { grid-template-columns: 1fr; }
       .growth-tiers { grid-template-columns: 1fr; }
-      .brands-list { grid-template-columns: repeat(2, 1fr); }
       .cta-form { flex-direction: column; }
       .cta-input { border-right: 1px solid rgba(196,168,130,0.3); border-bottom: none; }
     }
@@ -900,15 +783,15 @@
   <!-- HERO -->
   <section class="hero">
     <div class="hero-left">
-      <p class="hero-eyebrow">The Trusted Marketplace for Eco-Ethical Commerce</p>
+      <p class="hero-eyebrow">The Trusted Marketplace for Conscious Commerce</p>
       <h1 class="hero-headline">
         A more thoughtful<br>
         way to <em>discover.</em>
       </h1>
       <p class="hero-sub">
         Every piece chosen with intention. Every maker worth knowing. 
-        Copia Collective is where verified eco-ethical brands meet 
-        the conscious consumers they deserve.
+        Copia Collective is where verified brands meet 
+        the mindful consumers they deserve.
       </p>
       <div class="hero-actions">
         <a href="#join" class="btn-primary">Join the Collective</a>
@@ -926,7 +809,7 @@
         </div>
         <div class="mosaic-cell">
           <div class="mosaic-inner" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:1.5rem;">
-            <span style="font-family:var(--font-display);font-size:1rem;font-weight:300;color:var(--white);text-align:center;line-height:1.4;">Made in USA<br><span style="opacity:0.6;font-style:italic;">Independently built</span></span>
+            <span style="font-family:var(--font-display);font-size:1rem;font-weight:300;color:var(--white);text-align:center;line-height:1.4;">Locally sourced<br><span style="opacity:0.6;font-style:italic;">Independently built</span></span>
           </div>
         </div>
         <div class="mosaic-cell">
@@ -946,27 +829,37 @@
   <!-- MARQUEE -->
   <div class="marquee-strip" aria-hidden="true">
     <div class="marquee-inner">
-      <span class="marquee-item">Commerce</span><span class="marquee-dot">·</span>
-      <span class="marquee-item">Content</span><span class="marquee-dot">·</span>
-      <span class="marquee-item">Community</span><span class="marquee-dot">·</span>
-      <span class="marquee-item">Circularity</span><span class="marquee-dot">·</span>
-      <span class="marquee-item">Made in USA</span><span class="marquee-dot">·</span>
+      <span class="marquee-item">Locally Sourced</span><span class="marquee-dot">·</span>
       <span class="marquee-item">Verified Trust</span><span class="marquee-dot">·</span>
       <span class="marquee-item">Conscious Commerce</span><span class="marquee-dot">·</span>
       <span class="marquee-item">Real Makers</span><span class="marquee-dot">·</span>
       <span class="marquee-item">Authentic Stories</span><span class="marquee-dot">·</span>
+      <span class="marquee-item">Small Batch</span><span class="marquee-dot">·</span>
+      <span class="marquee-item">Independent Brands</span><span class="marquee-dot">·</span>
+      <span class="marquee-item">Thoughtfully Made</span><span class="marquee-dot">·</span>
       <!-- duplicate for seamless loop -->
-      <span class="marquee-item">Commerce</span><span class="marquee-dot">·</span>
-      <span class="marquee-item">Content</span><span class="marquee-dot">·</span>
-      <span class="marquee-item">Community</span><span class="marquee-dot">·</span>
-      <span class="marquee-item">Circularity</span><span class="marquee-dot">·</span>
-      <span class="marquee-item">Made in USA</span><span class="marquee-dot">·</span>
+      <span class="marquee-item">Locally Sourced</span><span class="marquee-dot">·</span>
       <span class="marquee-item">Verified Trust</span><span class="marquee-dot">·</span>
       <span class="marquee-item">Conscious Commerce</span><span class="marquee-dot">·</span>
       <span class="marquee-item">Real Makers</span><span class="marquee-dot">·</span>
       <span class="marquee-item">Authentic Stories</span><span class="marquee-dot">·</span>
+      <span class="marquee-item">Small Batch</span><span class="marquee-dot">·</span>
+      <span class="marquee-item">Independent Brands</span><span class="marquee-dot">·</span>
+      <span class="marquee-item">Thoughtfully Made</span><span class="marquee-dot">·</span>
     </div>
   </div>
+
+  <!-- ABOUT COPIA -->
+  <section class="section-about">
+    <h2 class="about-heading reveal">About Copia Collective</h2>
+    <p class="mission-text reveal">
+      Our mission is to connect mindful consumers with exceptional creators 
+      who want to share the authentic stories of the people behind their products.
+    </p>
+    <p class="vision-text reveal">
+      We believe in a world where commerce shapes communities for the better.
+    </p>
+  </section>
 
   <!-- PROBLEM -->
   <section class="section-problem">
@@ -992,7 +885,7 @@
       </div>
       <div class="stat-block reveal">
         <div class="stat-number">72%</div>
-        <div class="stat-desc">of conscious consumers actively seek verified eco-ethical products — yet no single trusted standard guides them.</div>
+        <div class="stat-desc">of mindful consumers actively seek verified sustainable products — yet no single trusted standard guides them.</div>
       </div>
       <div class="stat-block reveal">
         <div class="stat-number">0</div>
@@ -1007,7 +900,7 @@
       <p class="section-label">The Copia Trust Engine</p>
       <h2 class="section-headline" style="font-size:clamp(2rem,3vw,3.2rem);">Every brand <em>earns</em> its place.</h2>
       <p class="section-body" style="margin: 1rem auto 0; text-align:center;">
-        Before a single product reaches a conscious consumer, it passes through our rigorous 40+ point verification framework.
+        Before a single product reaches a mindful consumer, it passes through our rigorous 40+ point verification framework.
       </p>
     </div>
     <div class="trust-engine reveal">
@@ -1026,7 +919,7 @@
       <div class="engine-step">
         <div class="engine-number">03</div>
         <div class="engine-title">Surface</div>
-        <div class="engine-desc">Verified products reach conscious consumers seeking a trusted source — through AI-powered curation.</div>
+        <div class="engine-desc">Verified products reach mindful consumers seeking a trusted source — through AI-powered curation.</div>
         <div class="engine-arrow">→</div>
       </div>
       <div class="engine-step">
@@ -1074,66 +967,8 @@
     </div>
   </section>
 
-  <!-- ETHOS LOOP -->
-  <section class="section-ethos">
-    <div class="ethos-header reveal">
-      <p class="section-label">The Ethos Loop</p>
-      <h2 class="section-headline" style="color:var(--white);">Four pillars.<br><em>One ecosystem.</em></h2>
-    </div>
-    <div class="ethos-loop reveal">
-      <div class="ethos-item">
-        <div class="ethos-c">C</div>
-        <div class="ethos-word">Commerce</div>
-        <div class="ethos-desc">A curated marketplace of verified sustainable brands — GMV take rate and brand partnerships monetized from day one.</div>
-      </div>
-      <div class="ethos-item">
-        <div class="ethos-c">C</div>
-        <div class="ethos-word">Content</div>
-        <div class="ethos-desc">The authentic stories of the people behind the products — editorial partnerships that make every maker worth knowing.</div>
-      </div>
-      <div class="ethos-item">
-        <div class="ethos-c">C</div>
-        <div class="ethos-word">Community</div>
-        <div class="ethos-desc">A trusted space connecting mindful consumers with exceptional creators — where belonging and shared values drive loyalty.</div>
-      </div>
-      <div class="ethos-item">
-        <div class="ethos-c">C</div>
-        <div class="ethos-word">Circularity</div>
-        <div class="ethos-desc">Resale, repair, and give-back programs that keep items out of landfills — and keep consumers inside our ecosystem.</div>
-      </div>
-    </div>
-  </section>
 
-  <!-- BRANDS -->
-  <section class="section-brands">
-    <div class="brands-header">
-      <div class="reveal">
-        <p class="section-label">Featured Makers</p>
-        <h2 class="section-headline" style="font-size:clamp(2rem,3vw,3rem);">Not everything<br>belongs here —<br><em>that's the point.</em></h2>
-      </div>
-      <div class="reveal">
-        <p class="section-body">
-          We are thoughtful about what we feature, ensuring quality, authenticity, and purpose. 
-          Every brand must be Made in the USA and meet a minimum of 15 criteria across all 8 pillars 
-          of our verification framework.
-        </p>
-      </div>
-    </div>
-    <div class="brands-list reveal">
-      <div class="brand-tile"><div class="brand-name">Imogene + Willie</div><div class="brand-origin">Nashville, TN</div></div>
-      <div class="brand-tile"><div class="brand-name">East Fork</div><div class="brand-origin">Asheville, NC</div></div>
-      <div class="brand-tile"><div class="brand-name">Glassybaby</div><div class="brand-origin">Seattle, WA</div></div>
-      <div class="brand-tile"><div class="brand-name">Hedley & Bennett</div><div class="brand-origin">Los Angeles, CA</div></div>
-      <div class="brand-tile"><div class="brand-name">Etkie</div><div class="brand-origin">The Southwest</div></div>
-      <div class="brand-tile"><div class="brand-name">Jenni Earle</div><div class="brand-origin">North Carolina</div></div>
-      <div class="brand-tile"><div class="brand-name">Bryr Studio</div><div class="brand-origin">San Francisco, CA</div></div>
-      <div class="brand-tile"><div class="brand-name">Ume Studio</div><div class="brand-origin">California</div></div>
-      <div class="brand-tile"><div class="brand-name">Tatine</div><div class="brand-origin">Chicago, IL</div></div>
-      <div class="brand-tile"><div class="brand-name">DS & Durga</div><div class="brand-origin">Brooklyn, NY</div></div>
-      <div class="brand-tile"><div class="brand-name">Lucchese</div><div class="brand-origin">El Paso, TX</div></div>
-      <div class="brand-tile"><div class="brand-name">Marie Turnor</div><div class="brand-origin">Los Angeles, CA</div></div>
-    </div>
-  </section>
+
 
   <!-- GROWTH SYSTEM -->
   <section class="section-growth">
@@ -1172,17 +1007,6 @@
     </div>
   </section>
 
-  <!-- VISION / MISSION -->
-  <section class="section-vision">
-    <div class="vision-eyebrow reveal">Our Vision</div>
-    <p class="vision-text reveal">
-      A world where commerce shapes communities for the better.
-    </p>
-    <p class="mission-text reveal">
-      Our mission is to connect mindful consumers with exceptional creators 
-      who want to share the authentic stories of the people behind their products.
-    </p>
-  </section>
 
   <!-- FINAL CTA -->
   <section class="section-cta" id="join">
@@ -1223,7 +1047,7 @@
     reveals.forEach(el => observer.observe(el));
 
     // Stagger child reveals within grids
-    document.querySelectorAll('.values-grid, .ethos-loop, .growth-tiers, .trust-engine, .brands-list').forEach(grid => {
+    document.querySelectorAll('.values-grid, .growth-tiers, .trust-engine').forEach(grid => {
       const children = grid.children;
       Array.from(children).forEach((child, i) => {
         child.style.transitionDelay = `${i * 0.08}s`;
